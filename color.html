@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Enter the background color : <input id="bcolor" type="text"></p>
+    <p>Enter the text color : <input id="tcolor" type="text"></p>
+    <p>Enter the text size : <input id="tsize" type="text"></p>
+    <script>
+        const bcolor = document.getElementById('bcolor')
+        const tcolor = document.getElementById('tcolor')
+        const tsize = document.getElementById('tsize')
+        const body = document.getElementsByTagName('body')
+        bcolor.addEventListener('input',() => {
+            const inputValue = bcolor.value;
+            console.log(inputValue)
+            document.body.style.backgroundColor = inputValue;
+        });
+        tcolor.addEventListener('input',()=>{
+            const inpValue = tcolor.value;
+            console.log(inpValue)
+            document.body.style.color = inpValue
+        })
+        tsize.addEventListener('input',(e)=>{
+            e.preventDefault();
+            const inpValue1 = tsize.value;
+            console.log(inpValue1)
+            document.body.style.fontSize = inpValue1 + `px`
+        })
+    </script>
+</body>
+</html>
